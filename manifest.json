@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+  "name": "rantConsole",
+  "version": "1.0",
+
+  "description": "Rant in developer console. (devRant)",
+
+	"content_scripts": [
+		{
+			"matches": ["*://*/*"],
+			"js": ["initRant.js"]
+		}
+	],
+
+  "background":{
+      "scripts": ["backgroundWorker.js"],
+			"persistent": false
+    },
+
+	"commands": {
+		"getRant": {
+			"suggested_key": {
+				"default": "Ctrl+Shift+Z"
+			},
+			"description": "Get a rant"
+			},
+		"resetRant": {
+			"suggested_key": {
+				"default": "Ctrl+Shift+X"
+			},
+			"description": "Reset rant skip number"
+			}
+	}
+
+}
